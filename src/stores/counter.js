@@ -9,14 +9,23 @@ export const useCounterStore = defineStore({
   getters: {
     // doubleCount: (state) => state.counter * 2
     doubleCount(state){
-      state.counter*2
+      return state.counter*2
     }
   },
   actions: {
     increment() {
-     setInterval(()=>{
+     setTimeout(()=>{
       this.counter++
      },1000)
+    }
+  }
+})
+
+export const usePatch = defineStore({
+  id:'patch',
+  state:()=>{
+    return{
+      number:10
     }
   }
 })
